@@ -1,4 +1,4 @@
-package org.example.command_layer_spring_boot_template.command.example;
+package org.example.command_layer_spring_boot_template.command.user;
 
 import lombok.Builder;
 import lombok.Getter;
