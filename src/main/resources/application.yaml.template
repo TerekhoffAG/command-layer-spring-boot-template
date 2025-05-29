@@ -1,26 +1,38 @@
+server:
+  port: 8081  # The port on which the embedded server will listen.
+
 logging:
   level:
-    root: INFO
-    ru.ds: DEBUG
+    root: INFO  # Default logging level for all loggers.
     org:
+      example: DEBUG  # Debug level for application-specific packages. Change to your parameters.
+      springframework: WARN  # Warning level for Spring Framework logs.
       hibernate:
-        SQL: DEBUG
+        SQL: DEBUG  # Log SQL queries at debug level.
         type:
           descriptor:
             sql:
-              BasicBinder: TRACE
+              BasicBinder: TRACE  # Trace level for parameter binding details
         orm:
           jdbc:
-            bind: TRACE
+            bind: TRACE  # Trace level for JDBC parameter binding
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){white} %clr([%t]){blue} %clr(%-5level) %clr(%logger{39}){cyan} %clr(:){white} %m%n%ex"  # Colored log format with timestamp, thread, level, logger name and message
+
 spring:
+  application:
+    name: command-layer-spring-boot-template  # Application name used for service discovery and metrics
+  output:
+    ansi:
+      enabled: always  # Force colored output in logs (even when not in terminal)
   jpa:
+    open-in-view: false  # Disables the Open Session in View pattern (prevents JPA session from remaining open during view rendering)
     properties:
       hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true  # Pretty-print formatted SQL in logs
   datasource:
-    url: jdbc:postgresql://localhost:5432/db
-    username: postgres
-    password: 123
+    url: jdbc:postgresql://localhost:5432/cl_template_db  # JDBC connection URL
+    username: postgres  # Database username
+    password: StrongPassword  # Database password
   liquibase:
-    change-log: classpath:db/changelog.xml
+    change-log: classpath:db/changelog.xml  # Location of Liquibase changelog file
