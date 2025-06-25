@@ -1,10 +1,10 @@
-# Spring Boot application template
-Spring Boot application template implementing the command layer based on the design pattern Command.
+# Шаблон приложения с использованием Spring Boot 3.х 
+Шаблон приложения Spring Boot, реализующий командный слой на основе шаблона проектирования Command (Команда).
 
-## Purpose
-The purpose of this template is to speed up the creation of new Spring Boot applications.
+## Назначение
+Цель этого шаблона — ускорить создание новых приложений с использованием Spring Boot.
 
-## Structure command layer in application
+## Структура командного слоя в приложении
 ```
 my-project
 ├─ org.example.application
@@ -28,7 +28,7 @@ my-project
 │  ├─ ... 
 ```
 
-## Technology stack
+## Стек технологий
 ![Java](https://badgen.net/badge/Java/17+/orange)
 ![Java Spring Boot](https://badgen.net/badge/Spring%20Boot/3.4.4/green)
 ![Liquibase](https://badgen.net/badge/Liquibase/4.32.0/purple)

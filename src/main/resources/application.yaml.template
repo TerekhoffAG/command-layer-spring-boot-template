@@ -17,7 +17,7 @@ logging:
           jdbc:
             bind: TRACE  # Trace level for JDBC parameter binding
   pattern:
-    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){white} %clr([%t]){blue} %clr(%-5level) %clr(%logger{39}){cyan} %clr(:){white} %m%n%ex"  # Colored log format with timestamp, thread, level, logger name and message
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){white} [${spring.application.name:app}] %clr([%t]){blue} %clr(%level) %clr(%logger){cyan} %clr(:){white} %m%n%ex"  # Colored log format with timestamp, thread, level, logger name and message
 
 spring:
   application:
